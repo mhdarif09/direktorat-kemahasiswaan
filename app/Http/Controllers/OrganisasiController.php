@@ -14,6 +14,7 @@ class OrganisasiController extends Controller
         return view('admin.organisasi.index', compact('organisasi'));
     }
 
+
     public function create()
     {
         return view('admin.organisasi.create');

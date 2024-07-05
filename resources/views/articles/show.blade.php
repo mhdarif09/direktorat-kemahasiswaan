@@ -54,21 +54,20 @@
         </div>
       </nav>
 
-      <!-- Section for Single Article -->
-      <section class="article">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <h2>{{ $article->judul }}</h2>
-                      <p class="text-muted">Author: {{ $article->author }}</p>
-                      <img src="{{ asset('images/' . $article->thumbnail) }}" alt="{{ $article->judul }}">
-                      <p> {!! $article->content !!}</p>
-                      </p>
-                      <a href="{{ route('articles.index') }}" class="btn btn-primary">Back to Articles</a>
-                  </div>
-              </div>
+     <!-- Section for Single Article -->
+<section class="article">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+            <h2 class="text-center">{{ $article->judul }}</h2>
+            <p class="text-center">Author: {{ $article->author }}</p>
+              <img src="{{ asset('images/' . $article->thumbnail) }}" alt="{{ $article->judul }}" class="img-fluid">
+              <p>{!! $article->content !!}</p>
+              <a href="{{ route('articles.index') }}" class="btn btn-primary">Back to Articles</a>
           </div>
-      </section>
+      </div>
+  </div>
+</section>
 
       <!-- Footer -->
       <div class="container">

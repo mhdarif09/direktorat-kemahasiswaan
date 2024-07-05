@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Article;
-
+use App\Models\Organisasi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $totalArticles = Article::count();
-        return view('admin.dashboard', compact('totalArticles'));
+        $totalOrganisasi = Organisasi::count();
+        return view('admin.dashboard', compact('totalArticles', 'totalOrganisasi'));
     }
 }

@@ -14,38 +14,37 @@
                         @method('PUT')
 
                         <div class="form-group">
-                            <label for="judul">Title</label>
-                            <input type="text" name="judul" id="judul" class="form-control" value="{{ old('judul', $article->judul) }}" required>
+                            <label for="judul">Judul:</label>
+                            <input type="text" name="judul" id="judul" class="form-control" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="thumbnail">Thumbnail</label>
-                            <input type="file" name="thumbnail" id="thumbnail" class="form-control-file">
-                            @if ($article->thumbnail)
-                                <img src="{{ asset('images/' . $article->thumbnail) }}" alt="Thumbnail" style="max-width: 100px; margin-top: 10px;">
-                            @endif
+                            <label for="thumbnail">Thumbnail:</label>
+                            <input type="file" name="thumbnail" id="thumbnail" class="form-control" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="author">Author</label>
-                            <input type="text" name="author" id="author" class="form-control" value="{{ old('author', $article->author) }}" required>
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" id="author" class="form-control" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="date_publish">Publish Date</label>
-                            <input type="date" name="date_publish" id="date_publish" class="form-control" value="{{ old('date_publish', $article->date_publish) }}" required>
+                            <label for="date_publish">Date Publish:</label>
+                            <input type="date" name="date_publish" id="date_publish" class="form-control" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="content">Content</label>
-                            <textarea name="content" id="content" class="form-control" rows="5" required>{{ old('content', $article->content) }}</textarea>
+                            <label for="content">Content:</label>
+                            <textarea name="content" id="content" placeholder="Enter the Description" name="content"></textarea>
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Update Article</button>
+                        <button type="submit" class="btn btn-primary">Add Article</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+                @endsection
+                
+                @section('scripts')
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#content'))
+                        .catch(error => {
+                            console.error(error);
+                        });
+                </script>
+                @endsection
+                

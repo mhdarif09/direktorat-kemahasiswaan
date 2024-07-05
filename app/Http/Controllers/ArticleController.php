@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Organisasi;
 
 class ArticleController extends Controller
 {
@@ -27,9 +29,10 @@ class ArticleController extends Controller
     public function welcome()
     {
         $articles = Article::latest()->paginate(12); // Menampilkan artikel terbaru dengan pagination
-        return view('welcome', compact('articles'));
+        $organisasis = Organisasi::all(); // Mengambil semua data organisasi (contoh menggunakan Eloquent ORM)        
+        return view('welcome', compact('articles', 'organisasis'));
     }
-
+    
     public function showlist()
     {
         $articles = Article::latest()->paginate(12); // Menampilkan artikel terbaru dengan pagination

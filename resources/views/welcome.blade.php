@@ -138,36 +138,28 @@
       </section>
       
       <!-- Section untuk UKM & Organisasi-->
-        <section>
+      <section class="article">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-auto mb-5 mb-md-7">
-              <h1 class="fw-semi-bold text-1100">ORGANISASI<span class="text-1100"> & UKM BINA DARMA</span></h1>
+            <div class="row">
+                <div class="col-lg-12 text-center mb-4">
+                    <h2>Organisasi dan UKM Bina Darma</h2>
+                </div>
             </div>
+            <div class="row">
+              @foreach ($organisasis as $organisasi)
+              <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <img src="{{ Storage::url('organisasi/' . $organisasi->image) }}" class="card-img-top img-fluid" style="width: 400px; height: 300px;" alt="...">
+                    <div class="text-center">
+                        <h5 class="card-title mt-3">{{ $organisasi->name }}</h5>
+                        <p class="card-text">{{ $organisasi->description }}</p>
+                    </div>
+                </div>
+            </div>
+            
+              @endforeach
           </div>
-          <div class="row">
-            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-              <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="{{asset('/img/gallery/researchers.png')}}" width="100" alt="..." />
-                <h3 class="h5 mb-4 font-base">Himpunan Mahasiswa Teknik Informatika</h3>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-              <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="{{asset('/img/gallery/librarian.png')}}" width="100" alt="..." />
-                <h3 class="h5 mb-4 font-base">Himpunan Mahasiswa Sistem Informasi</h3>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-              <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="{{asset('/img/gallery/societies.png')}}" width="100" alt="..." />
-                <h3 class="h5 mb-4 font-base">Himpunan Mahasiswa Vokasi</h3>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-              <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="{{asset('/img/gallery/authors.png')}}" width="100" alt="..." />
-                <h3 class="h5 mb-4 font-base">Himpunan Mahasiswa Akuntansi</h3>
-              </div>
-            </div>
-          </div>
-        </div>
+          
         <!-- end of Section Organisasi-->
 
       </section>
@@ -210,11 +202,11 @@
                     <div class="card">
                         <img src="{{ asset('images/' . $article->thumbnail) }}" class="card-img-top img-fluid" style="width: 400px; height: 300px;" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $article->judul }}</h5>
-                            <p class="card-text">{{ Str::limit(strip_tags($article->content), 100) }}</p>
-                            <p class="card-text"><small class="text-muted">Author: {{ $article->author }}</small></p>
-                            <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary">Read More</a>
-                        </div>
+                          <h5 class="card-title">{{ $article->judul }}</h5>
+                          <p class="card-text" style="font-weight: normal;">{{ \Illuminate\Support\Str::limit(strip_tags($article->content), 100) }}</p>
+                          <p class="card-text"><small class="text-muted">Author: {{ $article->author }}</small></p>
+                          <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary mt-3">Read More</a>
+                      </div>                      
                     </div>
                 </div>
                 @endforeach
