@@ -14,41 +14,46 @@
     <link rel="manifest" href="{{ asset('img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('img/favicons/mstile-150x150.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <meta name="theme-color" content="#ffffff">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="#"> 
-            <img class="me-3" src="{{ asset('/img/gallery/logo.png')}}" alt="" />
-            <div class="text-primary font-base">Bina Darma</div>
-          </a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bina Darma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-              <li class="nav-item"><a class="nav-link fw-medium active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
-              <li class="nav-item"><a class="nav-link" href="#libraries">Libraries</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index') }}">Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://perpustakaan.binadarma.ac.id">Perpustakaan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://sisfo.binadarma.ac.id"> Sistem Informasi Akademik </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="https://fst.binadarma.ac.id">Fakultas Sains Dan Teknologi</a></li>
+                      <li><a class="dropdown-item" href="https://bpm.binadarma.ac.id">Badan Penjamin Mutu</a></li>
+                  </ul>
               </li>
-            </ul>
+                        </ul>
             <form class="ps-lg-5" action="{{ route('login') }}">
                 <button class="btn btn-lg btn-primary rounded-pill bg-gradient font-base order-0" type="submit">Login</button>
             </form>
-          </div>
         </div>
-      </nav>
-      
+    </div>
+</nav>
       <section class="py-0" id="home" style="background-image: url('{{ asset('/img/bidar.jpeg') }}');">
         <div class="overlay"></div>
         <div class="container">
