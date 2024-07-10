@@ -37,16 +37,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://perpustakaan.binadarma.ac.id">Perpustakaan</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Links Terkait</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://sisfo.binadarma.ac.id"> Sistem Informasi Akademik </a>
                 </li>
-            </ul>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="https://fst.binadarma.ac.id">Fakultas Sains Dan Teknologi</a></li>
+                      <li><a class="dropdown-item" href="https://bpm.binadarma.ac.id">Badan Penjamin Mutu</a></li>
+                  </ul>
+              </li>
+                        </ul>
             <form class="ps-lg-5" action="{{ route('login') }}">
                 <button class="btn btn-lg btn-primary rounded-pill bg-gradient font-base order-0" type="submit">Login</button>
             </form>
