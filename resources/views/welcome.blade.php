@@ -14,40 +14,45 @@
     <link rel="manifest" href="{{ asset('img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('img/favicons/mstile-150x150.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <meta name="theme-color" content="#ffffff">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="#"> 
-            <img class="me-3" src="{{ asset('/img/gallery/logo.png')}}" alt="" />
-            <div class="text-primary font-base">Bina Darma</div>
-          </a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bina Darma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-              <li class="nav-item"><a class="nav-link fw-medium active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{route ('articles.index')}}">Article</a></li>
-              <li class="nav-item"><a class="nav-link" href="#libraries">Libraries</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index') }}">Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://perpustakaan.binadarma.ac.id">Perpustakaan</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Links Terkait</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="ps-lg-5" action="{{ route('login') }}">
                 <button class="btn btn-lg btn-primary rounded-pill bg-gradient font-base order-0" type="submit">Login</button>
             </form>
-          </div>
         </div>
-      </nav>
+    </div>
+</nav>
       
       <section class="py-0" id="home" style="background-image: url('{{ asset('/img/bidar.jpeg') }}');">
         <div class="overlay"></div>
@@ -236,7 +241,6 @@
         <div class="container">
           <div class="row justify-content-between pb-5 pt-8">
             <div class="col-12 col-lg-auto mb-5 mb-lg-0"><a class="d-flex align-items-center fw-semi-bold fs-3" href="#"> <img class="me-3" src="{{ asset('img/gallery/logo.png') }}" alt= />
-                <div class="text-primary font-base">Bina Darma</div>
               </a></div>
             <div class="col-auto mb-3">
               <h6 class="mb-5 font-base fs-1">About us </h6>
@@ -272,7 +276,7 @@
               <p class="mb-0 fs--1 my-2 text-center">&copy; This template is made with&nbsp;
                 <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#723182" viewBox="0 0 16 16">
                   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
-                </svg>&nbsp;by&nbsp;<a href="https://themewagon.com/" target="_blank">ThemeWagon </a>
+                </svg>&nbsp;by&nbsp;<a href="https://binadarma.com/" target="_blank">DSTI BINA DARMA </a>
               </p>
             </div>
             <div class="col-auto my-4">
@@ -314,6 +318,7 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="/public/vendors/@popperjs/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="/public/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="/public/vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
